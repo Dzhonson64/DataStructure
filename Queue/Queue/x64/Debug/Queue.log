@@ -1,0 +1,5 @@
+﻿  MethQueue.cpp
+  Queue.cpp
+  Создание кода...
+c:\users\kiril\onedrive\рабочий стол\c++\queue\queue\queue\methqueue.cpp(58): warning C4715: List::operator[]: значение возвращается не при всех путях выполнения
+  Queue.vcxproj -> C:\Users\kiril\OneDrive\Рабочий стол\C++\Queue\Queue\x64\Debug\Queue.exe

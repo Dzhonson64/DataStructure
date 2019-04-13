@@ -1,0 +1,5 @@
+﻿  MethQueue.cpp
+Queue.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall List<int>::List<int>(void)" (??0?$List@H@@QAE@XZ) в функции _main
+Queue.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall List<int>::~List<int>(void)" (??1?$List@H@@QAE@XZ) в функции _main
+Queue.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall List<int>::push_back(int)" (?push_back@?$List@H@@QAEXH@Z) в функции _main
+C:\Users\kiril\OneDrive\Рабочий стол\C++\Queue\Queue\Debug\Queue.exe : fatal error LNK1120: неразрешенных внешних элементов: 3
