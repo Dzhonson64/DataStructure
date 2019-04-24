@@ -1,0 +1,7 @@
+﻿  HeapTree.cpp
+c:\users\kiril\onedrive\рабочий стол\programming\c++\heaptree\heaptree\heaptree.cpp(78): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kiril\onedrive\рабочий стол\programming\c++\heaptree\heaptree\heaptree.cpp(81): warning C4018: <: несоответствие типов со знаком и без знака
+  main.cpp
+  Создание кода...
+c:\users\kiril\onedrive\рабочий стол\programming\c++\heaptree\heaptree\heaptree.cpp(115): warning C4715: HeapTree::top: значение возвращается не при всех путях выполнения
+  HeapTree.vcxproj -> C:\Users\kiril\OneDrive\Рабочий стол\PROGRAMMING\C++\HeapTree\Debug\HeapTree.exe
