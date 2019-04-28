@@ -14,26 +14,26 @@ HeapTree::~HeapTree()
 
 void HeapTree::siftDown(int currentIndex)
 {
-	int leftIndex;	// указатель на позицию элемента влевом узле
-	int rightIndex; // указатель на позицию элемента вправом узле
+	int leftIndex;	// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРѕР·РёС†РёСЋ СЌР»РµРјРµРЅС‚Р° РІР»РµРІРѕРј СѓР·Р»Рµ
+	int rightIndex; // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРѕР·РёС†РёСЋ СЌР»РµРјРµРЅС‚Р° РІРїСЂР°РІРѕРј СѓР·Р»Рµ
 	int maxIndex = currentIndex;
 	int count = tree.size();
 	while (currentIndex < count) {
 		
-		leftIndex = 2 * currentIndex + 1;	// вычисляем позицию левого элемента
-		rightIndex = 2 * currentIndex + 2;	// вычисляем позицию правого элемента
+		leftIndex = 2 * currentIndex + 1;	// РІС‹С‡РёСЃР»СЏРµРј РїРѕР·РёС†РёСЋ Р»РµРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+		rightIndex = 2 * currentIndex + 2;	// РІС‹С‡РёСЃР»СЏРµРј РїРѕР·РёС†РёСЋ РїСЂР°РІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 
-		if (leftIndex < count && tree[leftIndex] > tree[maxIndex]) { // если не вышли за границу и влевом узле элемент больше чем i-ый, то присваиваем maxIndex
+		if (leftIndex < count && tree[leftIndex] > tree[maxIndex]) { // РµСЃР»Рё РЅРµ РІС‹С€Р»Рё Р·Р° РіСЂР°РЅРёС†Сѓ Рё РІР»РµРІРѕРј СѓР·Р»Рµ СЌР»РµРјРµРЅС‚ Р±РѕР»СЊС€Рµ С‡РµРј i-С‹Р№, С‚Рѕ РїСЂРёСЃРІР°РёРІР°РµРј maxIndex
 			maxIndex = leftIndex;
 			
 		}
-		if (rightIndex < count && tree[rightIndex] > tree[maxIndex]) { // если не вышли за границу и ещё и впрвом уезле элемент больше чем i-ый, то присваиваем maxIndex
+		if (rightIndex < count && tree[rightIndex] > tree[maxIndex]) { // РµСЃР»Рё РЅРµ РІС‹С€Р»Рё Р·Р° РіСЂР°РЅРёС†Сѓ Рё РµС‰С‘ Рё РІРїСЂРІРѕРј СѓРµР·Р»Рµ СЌР»РµРјРµРЅС‚ Р±РѕР»СЊС€Рµ С‡РµРј i-С‹Р№, С‚Рѕ РїСЂРёСЃРІР°РёРІР°РµРј maxIndex
 			maxIndex = rightIndex;
 		}
-		if (maxIndex == currentIndex) { // если все два сына меньше i-ого элемента, то прекращаем цикл
+		if (maxIndex == currentIndex) { // РµСЃР»Рё РІСЃРµ РґРІР° СЃС‹РЅР° РјРµРЅСЊС€Рµ i-РѕРіРѕ СЌР»РµРјРµРЅС‚Р°, С‚Рѕ РїСЂРµРєСЂР°С‰Р°РµРј С†РёРєР»
 			break;
 		}
-		/* делаем заменту элементов */
+		/* РґРµР»Р°РµРј Р·Р°РјРµРЅС‚Сѓ СЌР»РµРјРµРЅС‚РѕРІ */
 		int temp = tree[currentIndex];
 		tree[currentIndex] = tree[maxIndex];
 		tree[maxIndex] = temp;
@@ -45,29 +45,29 @@ void HeapTree::siftDown(int currentIndex)
 
 void HeapTree::siftUp(int i)
 {
-	while (i > 0 && tree[i] > tree[i / 2]) { // пока массив не закончился и родитель меньше рассматриваемого элемента
-		swap(tree[i], tree[i / 2]);			 // меняем их местами
+	while (i > 0 && tree[i] > tree[i / 2]) { // РїРѕРєР° РјР°СЃСЃРёРІ РЅРµ Р·Р°РєРѕРЅС‡РёР»СЃСЏ Рё СЂРѕРґРёС‚РµР»СЊ РјРµРЅСЊС€Рµ СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+		swap(tree[i], tree[i / 2]);			 // РјРµРЅСЏРµРј РёС… РјРµСЃС‚Р°РјРё
 		i = i / 2;
 	}
 }
 
 void HeapTree::insert(int num)
 {
-	tree.push_back(num);						// добавлем элемент в массив
+	tree.push_back(num);						// РґРѕР±Р°РІР»РµРј СЌР»РµРјРµРЅС‚ РІ РјР°СЃСЃРёРІ
 
-	int currentIndex = tree.size() - 1;			// запоминаем индекс последнего элемента
-	int parentIndex = (currentIndex - 1) / 2;	// запоминаем его родителя
+	int currentIndex = tree.size() - 1;			// Р·Р°РїРѕРјРёРЅР°РµРј РёРЅРґРµРєСЃ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
+	int parentIndex = (currentIndex - 1) / 2;	// Р·Р°РїРѕРјРёРЅР°РµРј РµРіРѕ СЂРѕРґРёС‚РµР»СЏ
 
-	while (currentIndex > 0 && tree[parentIndex] < tree[currentIndex]) { // пока массив не закончился и родитель меньше рассматриваемого элемента
-		/* меняем их местами */
+	while (currentIndex > 0 && tree[parentIndex] < tree[currentIndex]) { // РїРѕРєР° РјР°СЃСЃРёРІ РЅРµ Р·Р°РєРѕРЅС‡РёР»СЃСЏ Рё СЂРѕРґРёС‚РµР»СЊ РјРµРЅСЊС€Рµ СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+		/* РјРµРЅСЏРµРј РёС… РјРµСЃС‚Р°РјРё */
 		int temp = tree[currentIndex];
 		tree[currentIndex] = tree[parentIndex];
 		tree[parentIndex] = temp;
 
-		currentIndex = parentIndex;				// рассматриваем элементом теперь становится элемент на месте родителя
-		parentIndex = (currentIndex - 1) / 2;	// теперь берём родителя относительно нового элемента
+		currentIndex = parentIndex;				// СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРј СЌР»РµРјРµРЅС‚РѕРј С‚РµРїРµСЂСЊ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ СЌР»РµРјРµРЅС‚ РЅР° РјРµСЃС‚Рµ СЂРѕРґРёС‚РµР»СЏ
+		parentIndex = (currentIndex - 1) / 2;	// С‚РµРїРµСЂСЊ Р±РµСЂС‘Рј СЂРѕРґРёС‚РµР»СЏ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РЅРѕРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 	}
-	// или вместо while можно заменить на siftUp(tree.size());
+	// РёР»Рё РІРјРµСЃС‚Рѕ while РјРѕР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° siftUp(tree.size());
 }
 
 void HeapTree::siftDownRecursively(int currentIndex)
@@ -91,7 +91,7 @@ void HeapTree::siftDownRecursively(int currentIndex)
 void HeapTree::siftUpRecursively(int currentIndex)
 {
 	if (currentIndex > 0 && tree[currentIndex] > tree[currentIndex / 2]) {
-		swap(tree[currentIndex], tree[currentIndex / 2]); // меняем их местами
+		swap(tree[currentIndex], tree[currentIndex / 2]); // РјРµРЅСЏРµРј РёС… РјРµСЃС‚Р°РјРё
 		currentIndex = currentIndex / 2;
 	}
 	return;
@@ -99,8 +99,8 @@ void HeapTree::siftUpRecursively(int currentIndex)
 
 void HeapTree::insertRecursively(int currentIndex)
 {
-	tree.push_back(currentIndex);		// добавлем элемент в массив
-	siftUpRecursively(tree.size() - 1); // делаем просев вверх
+	tree.push_back(currentIndex);		// РґРѕР±Р°РІР»РµРј СЌР»РµРјРµРЅС‚ РІ РјР°СЃСЃРёРІ
+	siftUpRecursively(tree.size() - 1); // РґРµР»Р°РµРј РїСЂРѕСЃРµРІ РІРІРµСЂС…
 }
 
 int HeapTree::top()
@@ -116,10 +116,10 @@ int HeapTree::top()
 
 int HeapTree::pop()
 {
-	int result = tree[0];				// запоминаем корневой элемент
-	tree[0] = tree[tree.size() - 1];	// на место корневого ставим последний элемент массива
+	int result = tree[0];				// Р·Р°РїРѕРјРёРЅР°РµРј РєРѕСЂРЅРµРІРѕР№ СЌР»РµРјРµРЅС‚
+	tree[0] = tree[tree.size() - 1];	// РЅР° РјРµСЃС‚Рѕ РєРѕСЂРЅРµРІРѕРіРѕ СЃС‚Р°РІРёРј РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°
 	//tree.erase(tree.begin() + (tree.size() - 1));
-	tree.pop_back();	// удаляем последний элемет массива
-	siftDown(0);		// делаем просев нового корня вниз
-	return result;		// возвращяем старый корень
+	tree.pop_back();	// СѓРґР°Р»СЏРµРј РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµС‚ РјР°СЃСЃРёРІР°
+	siftDown(0);		// РґРµР»Р°РµРј РїСЂРѕСЃРµРІ РЅРѕРІРѕРіРѕ РєРѕСЂРЅСЏ РІРЅРёР·
+	return result;		// РІРѕР·РІСЂР°С‰СЏРµРј СЃС‚Р°СЂС‹Р№ РєРѕСЂРµРЅСЊ
 }
