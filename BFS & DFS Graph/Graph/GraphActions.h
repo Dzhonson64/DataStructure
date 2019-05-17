@@ -7,20 +7,20 @@ using namespace std;
 class GraphActions
 {
 private:
-	Vertex * start; // указатель на стартовую вершину
+	Vertex * start; // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЃС‚Р°СЂС‚РѕРІСѓСЋ РІРµСЂС€РёРЅСѓ
 	int time;
 public:
 	GraphActions();
 	~GraphActions();
-	void BFS(GraphActions & graph, Vertex & start); // обход в ширину
-	void DFS(GraphActions & graph); // обход в глубину
-	void DFS_visit(GraphActions & graph, Vertex & vertex); // обход в глубину
+	void BFS(GraphActions & graph, Vertex & start); // РѕР±С…РѕРґ РІ С€РёСЂРёРЅСѓ
+	void DFS(GraphActions & graph); // РѕР±С…РѕРґ РІ РіР»СѓР±РёРЅСѓ
+	void DFS_visit(GraphActions & graph, Vertex & vertex); // РѕР±С…РѕРґ РІ РіР»СѓР±РёРЅСѓ
 	void getPath(GraphActions & graph, Vertex & begin, Vertex & end);
-	queue<Vertex*> * pendingVertexes;				// очередь вершин для дальнейшего их рассмотрения
-	list<Vertex*> * vertexes;						// список всех вершин
-	list<Edge> * edges;								// список рёбер
-	void addVertex(Vertex & v);						// добавление вершины
-	void addEdge(Vertex & from, Vertex & to, bool oriented = false); // добавление ребра (oriented = false - граф неориентированный, oriented = true - ориентированный)
-	list<Vertex*>* getVertexList(Vertex & vertex);	// получение списка смежности для вершины vertex
+	queue<Vertex*> * pendingVertexes;				// РѕС‡РµСЂРµРґСЊ РІРµСЂС€РёРЅ РґР»СЏ РґР°Р»СЊРЅРµР№С€РµРіРѕ РёС… СЂР°СЃСЃРјРѕС‚СЂРµРЅРёСЏ
+	list<Vertex*> * vertexes;						// СЃРїРёСЃРѕРє РІСЃРµС… РІРµСЂС€РёРЅ
+	list<Edge> * edges;								// СЃРїРёСЃРѕРє СЂС‘Р±РµСЂ
+	void addVertex(Vertex & v);						// РґРѕР±Р°РІР»РµРЅРёРµ РІРµСЂС€РёРЅС‹
+	void addEdge(Vertex & from, Vertex & to, bool oriented = false); // РґРѕР±Р°РІР»РµРЅРёРµ СЂРµР±СЂР° (oriented = false - РіСЂР°С„ РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№, oriented = true - РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№)
+	list<Vertex*>* getVertexList(Vertex & vertex);	// РїРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° СЃРјРµР¶РЅРѕСЃС‚Рё РґР»СЏ РІРµСЂС€РёРЅС‹ vertex
 };
 
