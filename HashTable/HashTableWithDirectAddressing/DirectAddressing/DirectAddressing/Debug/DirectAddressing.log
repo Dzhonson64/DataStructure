@@ -1,0 +1,3 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (DirectAddressing.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+HashTable.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall Person::Person(void)" (??0Person@@QAE@XZ) в функции "public: __thiscall HashTable::HashTable(void)" (??0HashTable@@QAE@XZ)
+C:\Users\kiril\OneDrive\Рабочий стол\PROGRAMMING\C++\HashTables\HashTableWithDirectAddressing\DirectAddressing\Debug\Hash.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
