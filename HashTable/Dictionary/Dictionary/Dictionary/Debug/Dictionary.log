@@ -1,0 +1,4 @@
+﻿  Dict.cpp
+c:\users\kiril\onedrive\рабочий стол\programming\c++\hashtables\dictionary\dictionary\dictionary\dict.cpp(10): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\kiril\onedrive\рабочий стол\programming\c++\hashtables\dictionary\dictionary\dictionary\dict.cpp(169): warning C4715: Dict::search: значение возвращается не при всех путях выполнения
+  Dictionary.vcxproj -> C:\Users\kiril\OneDrive\Рабочий стол\PROGRAMMING\C++\HashTables\Dictionary\Dictionary\Debug\Dictionary.exe
